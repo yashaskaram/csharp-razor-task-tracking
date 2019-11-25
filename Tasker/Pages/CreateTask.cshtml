@@ -1,0 +1,21 @@
+﻿@page "/create-task"
+@model Tasker.Pages.CreateTaskModel
+
+<h1>Create Task</h1>
+<div asp-validation-summary="All"></div>
+<form asp-page="CreateEditTask" method="post" id="createEditForm">
+    <div>
+        <label asp-for="NewTask.Title">Title</label>
+        <input asp-for="NewTask.Title" />
+    </div>
+    <div>
+        <label asp-for="NewTask.Description">Description</label>
+        <textarea asp-for="NewTask.Description"></textarea>
+    </div>
+    <div>
+        <label asp-for="NewTask.PriorityLevel">Priority</label>
+        <input asp-for="NewTask.PriorityLevel" />
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
