@@ -1,6 +1,6 @@
 # Tasks
 
-## Module 1
+## Creating the Layout and Navigation
 
 ### Creating the Index Page
 Inside the `Pages` folder of the solution, create a new Razor Page called `Index`. 
