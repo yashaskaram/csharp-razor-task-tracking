@@ -17,7 +17,7 @@ namespace Tasker.Tests
                 + Path.DirectorySeparatorChar + "Shared"
                 + Path.DirectorySeparatorChar + "_Layout.cshtml";
             // Assert Index.cshtml is in the Views/Home folder
-            Assert.True(File.Exists(filePath), "`_Layout.cshtml` was not found in the Pages/Shared folder.");
+            Assert.True(File.Exists(filePath), "`_Layout.cshtml` should exist in the Pages/Shared folder.");
 
             var doc = new HtmlDocument();
             doc.Load(filePath);

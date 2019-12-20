@@ -15,7 +15,7 @@ namespace Tasker.Tests
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "Index.cshtml";
             // Assert Index.cshtml is in the Views/Home folder
-            Assert.True(File.Exists(filePath), "Index.cshtml was not found in the Pages folder.");
+            Assert.True(File.Exists(filePath), "Index.cshtml should exist in the Pages folder.");
 
             var doc = new HtmlDocument();
             doc.Load(filePath);

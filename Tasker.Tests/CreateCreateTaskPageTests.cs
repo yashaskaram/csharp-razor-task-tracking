@@ -15,7 +15,7 @@ namespace Tasker.Tests
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "CreateTask.cshtml";
             // Assert Index.cshtml is in the Views/Home folder
-            Assert.True(File.Exists(filePath), "`CreateTask.cshtml` was not found in the Pages folder.");
+            Assert.True(File.Exists(filePath), "CreateTask.cshtml should exist in the Pages folder.");
 
             var doc = new HtmlDocument();
             doc.Load(filePath);
@@ -23,7 +23,7 @@ namespace Tasker.Tests
             var h1Tag = doc.DocumentNode.Element("h1");
 
             Assert.True(h1Tag != null && h1Tag.InnerText.Contains("New Task"), 
-                "CreateTask.cshtml does not contain an <h1> tag with the text 'New Task'");
+                "CreateTask.cshtml should contain an <h1> tag with the text 'New Task'");
         }
     }
 }

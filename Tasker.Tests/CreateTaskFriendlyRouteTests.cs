@@ -21,8 +21,8 @@ namespace Tasker.Tests
             var doc = new HtmlDocument();
             doc.Load(filePath);
 
-            Assert.True(doc.DocumentNode.InnerText.Contains("@page \"create-task\""),
-                "CreatePage.cshtml should contain the text @page \"create-task\" at the top of the file to enable a user friendly route.");
+            Assert.True(doc.DocumentNode.InnerText.Contains("@page \"/create-task\""),
+                "CreatePage.cshtml should contain the text @page \"/create-task\" at the top of the file to enable a user friendly route.");
         }
     }
 }
