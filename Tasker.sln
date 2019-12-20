@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29311.281
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasker", "Tasker\Tasker.csproj", "{83B9CA0A-7E47-4948-8CEB-48278A727814}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tasker.Tests", "Tasker.Tests\Tasker.Tests.csproj", "{C66F1912-9AEE-4140-AA51-0ADDDF679497}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tasker.Tests", "Tasker.Tests\Tasker.Tests.csproj", "{C66F1912-9AEE-4140-AA51-0ADDDF679497}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
