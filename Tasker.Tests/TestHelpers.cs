@@ -6,9 +6,9 @@ namespace Tasker.Tests
 {
     public static class TestHelpers
     {
-        private static readonly string _projectName = "WishList";
+        private static readonly string _projectName = "Tasker";
 
-        public static Type GetUserType(string fullName)
+        public static Type GetClassType(string fullName)
         {
             return (from assembly in AppDomain.CurrentDomain.GetAssemblies()
                     where assembly.FullName.StartsWith(_projectName)
