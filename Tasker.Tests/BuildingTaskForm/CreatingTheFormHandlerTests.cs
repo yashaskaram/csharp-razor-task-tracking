@@ -27,8 +27,7 @@ namespace Tasker.Tests.BuildingTaskForm
 
             Assert.True(onPostMethod != null
                 && onPostMethod.ReturnType.Name == "IActionResult"
-                && onPostMethod.IsPublic
-                && onPostMethod.GetParameters().FirstOrDefault().ParameterType.Name == "Task",
+                && onPostMethod.IsPublic,
                 "`Task` class should contain a `public method called OnPost that returns an IActionResult and accepts a Task parameter. The method body should state \"return RedirectToPage(\"Index\")\".");
         }
     }

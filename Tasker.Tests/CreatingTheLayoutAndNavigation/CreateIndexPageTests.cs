@@ -3,7 +3,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using Xunit;
 
-namespace Tasker.Tests
+namespace Tasker.Tests.CreatingTheLayoutAndNavigation
 {
     public class CreateIndexPageTests
     {
