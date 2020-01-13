@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Xunit;
 
-namespace Tasker.Tests.DisplayingDataOnHomePage
+namespace Tasker.Tests.AddingValidationToCreateForm
 {
     public class CheckingTheModelStateTests
     {
