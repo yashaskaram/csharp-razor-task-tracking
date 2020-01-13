@@ -84,3 +84,12 @@ textarea, input {
 button {
     margin: 25px 0;
 }
+
+td {
+    padding: 10px;
+    font-size: 1.25em;
+}
+
+input[type=submit] {
+    margin-top: 20px;
+}
