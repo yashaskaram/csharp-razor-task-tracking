@@ -22,7 +22,7 @@ namespace Tasker.Tests.BuildingTaskForm
             Assert.True(taskModel != null, "`CreateTask` class was not found, ensure `CreateTask.cshtml.cs` contains a `public` class `CreateTask`.");
 
             var idProperty = taskModel.GetProperty("NewTask");
-            Assert.True(idProperty != null && idProperty.PropertyType == typeof(Task), "`Task` class did not contain a `public` `Task` property `NewTask`.");
+            Assert.True(idProperty != null && idProperty.PropertyType.Name == "Task", "`Task` class did not contain a `public` `Task` property `NewTask`.");
         }
     }
 }

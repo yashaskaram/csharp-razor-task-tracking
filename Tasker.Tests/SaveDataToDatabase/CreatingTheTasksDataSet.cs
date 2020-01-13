@@ -20,7 +20,7 @@ namespace Tasker.Tests.SaveDataToDatabase
             var applicationDbContext = TestHelpers.GetClassType("Tasker.ApplicationDbContext");
 
             Assert.True(applicationDbContext != null, "`ApplicationDbContext` class was not found, ensure `ApplicationDbContext.cs` contains a `public` class `ApplicationDbContext`.");
-            Assert.True(applicationDbContext.GetProperty("Tasks")?.PropertyType == typeof(DbSet<Task>), "`ApplicationDbContext` was found, but did contain a `property` Tasks of type `DbSet<Task>`.");
+            Assert.True(applicationDbContext.GetProperty("Tasks")?.PropertyType.Name.Contains("DbSet"), "`ApplicationDbContext` was found, but did contain a `property` Tasks of type `DbSet<Task>`.");
         }
     }
 }
