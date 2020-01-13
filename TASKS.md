@@ -55,14 +55,14 @@ In the body of the method return a `RedirectToPage` and pass in a value of `Inde
 ### Creating the Database Context Class
 At the root of the Tasker project, create a new class called `ApplicationDbContext` that inherits from the `DbContext` class.  
 Inside this class create a constructor that accepts a `DbContextOptions` parameter called `options`, and passes that parameter into the base class constructor as well.
-(Note: You can accomplish this by adding `: base(options)` after the constructor method signature)
+(Note: This can be done by adding `: base(options)` after the constructor method signature)
 
 ### Creating the Tasks Data Set
 Create a `public` property named `Tasks` with a type of `DbSet<Task>`.  
 
 ### Registering the Database Context
-In the `startup.cs` file `ConfigureServices` method, add the `ApplicationDbContext` class to the `services` collection.
-You can accomplish this by calling `AddDbContext<ApplicationDbContext>` on the `services` variable with the argument `options => options.UseInMemoryDatabase("Tasker")`.
+In the `startup.cs` file, locate the `ConfigureServices` method and add the `ApplicationDbContext` class to the `services` collection by calling `AddDbContext<ApplicationDbContext>`.
+Provide the argument `options => options.UseInMemoryDatabase("Tasker")` to the AddDbContext method.
 
 ### Injecting the Database Context
 Inside the `CreateTask.cshtml.cs` class, create a constructor and inject the `ApplicationDbContext` class as a parameter called context.  
@@ -76,19 +76,20 @@ Remember to call `SaveChanges()` on `_context` to persist adding the `newTask`.
 
 ### Injecting the Database Context
 Update the `Index.cshtml.cs` class to include a constructor that injects the `ApplicationDbContext` as a parameter called `context`.
-Store the `context` parameter in a class field called `_context`.
+Above the constructor, add a private class field called `_context` of type `ApplicationDbContext`.
+Inside the constructor, assign the `context` parameter to the `_context` field so it can be used throughout the class.
 
 ### Creating the Tasks Property
-Create a `public` property called `Tasks` with a type `List<Task>` to a hold the list of tasks that will display.
+At the top of the class, create a `public` property called `Tasks` with a type `List<Task>` to a hold the list of tasks that will display.
 
 ### Retrieving the Tasks
-Inside of the `OnGet` method, use `_context.Tasks` to retrieve all of the tasks and store them in the Tasks property.
+Inside of the `OnGet` method, use `_context.Tasks` to retrieve all of the tasks and assign them to the Tasks property.
 
 ### Filtering the Tasks
 Append the linq `.OrderBy(x => x.Priority)` method after `_context.Tasks` to order the tasks by their priority.
 
 ### Displaying the Tasks
-Inside of the `Index.cshtml` Razor markup, add an opening and closing 'table' tag.
+Inside of the `Index.cshtml` Razor markup file, add an opening and closing 'table' tag.
 Inside the table create a foreach loop to iterate through the `Tasks` using an iteration variable called task.
 Inside the loop, create a new 'tr' tag, and then print out each `task` property in a 'td' tag.  
 (Note: The table columns should display in the order of: Id, Title, Description, and Priority.)
@@ -97,21 +98,18 @@ Inside the loop, create a new 'tr' tag, and then print out each `task` property 
 ## Adding Validation to the Create Form
 
 ### Making Task Properties Required
-Inside the `Task.cs` class, add the '[Required]' attribute to the Title, Description, and PriorityLevel properties.
+Inside the `Task.cs` class, add the `[Required]` attribute above the Title, Description, and Priority properties.
 
 ### Controlling the Description Length
-Add a `MinLength` attribute above the `Description` property and pass in a value of 10.
+Add a `[MinLength]` attribute above the `Description` property and pass in a value of 10.
 
 ### Enforcing the Priority Range
-Add a `Range` attribute to the `PriorityLevel` property with a minimum value of 1 and a maximum of 5.
+Add a `[Range]` attribute above the `PriorityLevel` property and pass in a minimum value of 1 and a maximum of 5.
 
 ### Displaying the Validation Errors
-Inside the `CreateTask.cshtml` Razor markup, create an empty `div` tag above the existing `form` tag.
-Add the `asp-validation-summary` tag helper to the empty div to display any validation errors.
+Inside the `CreateTask.cshtml` markup, create an empty `div` tag above the existing `form` tag.
+Add the `asp-validation-summary` tag helper with a value of `All` to the empty div to display any validation errors.
 
 ### Checking the Model State
-Inside the OnPost method of the CreateTask class, add a conditional to check if the `ModelState` is valid.  
-If the data is not valid, use `return Page()` to reload the page with errors.
-If the data is valid, use `return RedirectToPage("Index")` to send the user to the home page.
-
-
+At the top of the OnPost method of the `CreateTask.cshtml.cs` class, add a conditional to check if the `ModelState` is _not_ valid.  
+Inside the conditional brackets, return `page()` to reload the invalid form and display the validation errors.
