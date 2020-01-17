@@ -1,8 +1,12 @@
-FROM microsoft/dotnet:2.1-sdk-alpine
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
 
-WORKDIR /src/app
+ENV APP_DIR /src/app
+
+RUN mkdir -p ${APP_DIR}
 
 RUN addgroup -S projects && adduser -S projects -G projects
+
+WORKDIR ${APP_DIR}
 
 COPY . .
 
