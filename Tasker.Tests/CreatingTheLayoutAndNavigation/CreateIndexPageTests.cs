@@ -7,7 +7,7 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
 {
     public class CreateIndexPageTests
     {
-        [Fact(DisplayName = "Create the Index Page")]
+        [Fact(DisplayName = "Create the Index Page @create-index-page")]
         public void CreateIndexPageTest()
         {
             // Get appropriate path to file for the current operating system
