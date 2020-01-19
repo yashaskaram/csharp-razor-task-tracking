@@ -9,7 +9,7 @@ namespace Tasker.Tests.BuildingTaskForm
 {
     public class CreatingTheTaskClassTests
     {
-        [Fact(DisplayName = "Create the Task Class")]
+        [Fact(DisplayName = "Create the Task Class @create-task-class")]
         public void CreateIndexPageTest()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"
