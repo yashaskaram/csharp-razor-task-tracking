@@ -11,7 +11,7 @@ namespace Tasker.Tests.SaveDataToDatabase
 {
     public class InjectingTheDatabaseContextTests
     {
-        [Fact(DisplayName = "Inject the database context into the CreateTask constructor")]
+        [Fact(DisplayName = "Inject the database context into the CreateTask constructor @injecting-context-createtask")]
         public void CreateFormHandlerMethodTests()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

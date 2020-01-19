@@ -8,7 +8,7 @@ namespace Tasker.Tests.SaveDataToDatabase
 {
     public class RegisteringTheDatabaseContextClass
     {
-        [Fact(DisplayName = "Register the database conext")]
+        [Fact(DisplayName = "Register the database conext @registering-dbcontext-startup")]
         public void RegisterTheDatabaseContextTest()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

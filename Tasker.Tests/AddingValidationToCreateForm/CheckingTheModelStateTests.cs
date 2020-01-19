@@ -9,7 +9,7 @@ namespace Tasker.Tests.AddingValidationToCreateForm
 {
     public class CheckingTheModelStateTests
     {
-        [Fact(DisplayName = "The CreateTask should check the form Model State.")]
+        [Fact(DisplayName = "The CreateTask should check the form Model State. @check-model-state")]
         public void CheckingTheModelState()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

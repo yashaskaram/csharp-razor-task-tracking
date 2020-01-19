@@ -11,7 +11,7 @@ namespace Tasker.Tests.AddingValidationToCreateForm
 {
     public class ControllingTheDescriptionLengthTests
     {
-        [Fact(DisplayName = "Controlling the Description Length")]
+        [Fact(DisplayName = "Controlling the Description Length @add-length-validation")]
         public void DescriptionLengthTests()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

@@ -8,7 +8,7 @@ namespace Tasker.Tests.SaveDataToDatabase
 {
     public class SavingTheNewTaskTests
     {
-        [Fact(DisplayName = "Saving the tasks")]
+        [Fact(DisplayName = "Saving the tasks @saving-new-task")]
         public void SavingTheTasks()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

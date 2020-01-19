@@ -10,7 +10,7 @@ namespace Tasker.Tests.AddingValidationToCreateForm
 {
     public class DisplayingTheValidationErrorsTests
     {
-        [Fact(DisplayName = "Displaying the Validation Errors")]
+        [Fact(DisplayName = "Displaying the Validation Errors. @display-validation-errors")]
         public void DisplayingTheValidationErrors()
         {
             // Get appropriate path to file for the current operating system

@@ -10,7 +10,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
 {
     public class InjectingTheDatabaseContextTests
     {
-        [Fact(DisplayName = "Inject the database context into the Index constructor")]
+        [Fact(DisplayName = "Inject the database context into the Index constructor @inject-context-index")]
         public void CreateFormHandlerMethodTests()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

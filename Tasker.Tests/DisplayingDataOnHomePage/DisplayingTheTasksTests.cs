@@ -9,7 +9,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
 {
     public class DisplayingTheTasksTests
     {
-        [Fact(DisplayName = "Display the tasks on the index page.")]
+        [Fact(DisplayName = "Display the tasks on the index page. @display-task-index")]
         public void DisplayingTheTasks()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

@@ -10,7 +10,7 @@ namespace Tasker.Tests.AddingValidationToCreateForm
 {
     public class MakingTaskPropertiesRequiredTests
     {
-        [Fact(DisplayName = "Making the Task Class properties required.")]
+        [Fact(DisplayName = "Making the Task Class properties required. @add-required-validation")]
         public void MakingTaskPropertiesRequired()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

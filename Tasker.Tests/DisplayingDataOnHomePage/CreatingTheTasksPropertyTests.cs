@@ -9,7 +9,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
 {
     public class CreatingTheTasksPropertyTests
     {
-        [Fact(DisplayName = "Create the Tasks property on the Index.cshtml.cs class")]
+        [Fact(DisplayName = "Create the Tasks property on the Index.cshtml.cs class @task-property-index")]
         public void CreateTheTasksProperty()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

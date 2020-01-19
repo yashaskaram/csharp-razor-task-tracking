@@ -8,7 +8,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
 {
     public class RetrievingTheTasksTests
     {
-        [Fact(DisplayName = "Inject the database context into the Index constructor")]
+        [Fact(DisplayName = "Retrieving the tasks @retrieving-tasks-index")]
         public void RetrievingTheTasks()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

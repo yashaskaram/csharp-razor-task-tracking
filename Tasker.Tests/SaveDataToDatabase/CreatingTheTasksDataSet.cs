@@ -9,7 +9,7 @@ namespace Tasker.Tests.SaveDataToDatabase
 {
     public class CreatingTheTasksDataSet
     {
-        [Fact(DisplayName = "Add tasks DbSet to ApplictionDbContext")]
+        [Fact(DisplayName = "Add tasks DbSet to ApplictionDbContext @add-dbset-context")]
         public void AddConstructorToApplicationDbContextTest()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

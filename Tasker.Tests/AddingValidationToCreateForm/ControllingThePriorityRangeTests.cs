@@ -11,7 +11,7 @@ namespace Tasker.Tests.AddingValidationToCreateForm
 {
     public class ControllingThePriorityRangeTests
     {
-        [Fact(DisplayName = "Controlling the Priority Range Tests")]
+        [Fact(DisplayName = "Controlling the Priority Range Tests @add-priority-validation")]
         public void PriorityRangeTests()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"
