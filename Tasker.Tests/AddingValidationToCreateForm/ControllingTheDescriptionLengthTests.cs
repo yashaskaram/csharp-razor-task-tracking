@@ -23,8 +23,11 @@ namespace Tasker.Tests.AddingValidationToCreateForm
 
             Assert.True(taskModel != null, "`Task` class was not found, ensure `Task.cs` contains a `public` class `Task`.");
 
-            var descriptionAttributes = taskModel.GetProperty("Description").GetCustomAttributesData();
+            var descriptionAttributes = taskModel.GetProperty("Description")?.GetCustomAttributesData();
+            Assert.True(descriptionAttributes != null, "The `Task` class should contain a `string` property called `Description`");
+            
             var descriptionMinLength = descriptionAttributes.FirstOrDefault(x => x.AttributeType == typeof(MinLengthAttribute));
+            Assert.True(descriptionMinLength != null, "The `Description` property of the `Task` class should be marked with the `[MinLength]` attribute.");
 
             var arg = descriptionMinLength.ConstructorArguments.FirstOrDefault();
             Assert.True(descriptionMinLength != null && (int)arg.Value == 10, "The `Description` property of the `Task` class should be marked with the `[MinLength]` attribute.");

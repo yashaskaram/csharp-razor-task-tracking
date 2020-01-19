@@ -23,12 +23,15 @@ namespace Tasker.Tests.AddingValidationToCreateForm
 
             Assert.True(taskModel != null, "`Task` class was not found, ensure `Task.cs` contains a `public` class `Task`.");
 
-            var descriptionAttributes = taskModel.GetProperty("Priority").GetCustomAttributesData();
-            var descriptionMinLength = descriptionAttributes.FirstOrDefault(x => x.AttributeType == typeof(RangeAttribute));
-
-            var arg1 = descriptionMinLength.ConstructorArguments.FirstOrDefault();
-            var arg2 = descriptionMinLength.ConstructorArguments.ElementAt(1);
-            Assert.True(descriptionMinLength != null && (int)arg1.Value == 1 && (int)arg2.Value == 5, 
+            var priorityAttributes = taskModel.GetProperty("Priority")?.GetCustomAttributesData();
+            Assert.True(priorityAttributes != null, "The `Task` class should contain a `string` property called `Priority`");
+            
+            var priorityRange = priorityAttributes.FirstOrDefault(x => x.AttributeType == typeof(RangeAttribute));
+            Assert.True(priorityRange != null, "The `Priority` property of the `Task` class should be marked with the `[Range]` attribute.");
+            
+            var arg1 = priorityRange.ConstructorArguments.FirstOrDefault();
+            var arg2 = priorityRange.ConstructorArguments.ElementAt(1);
+            Assert.True(priorityRange != null && (int)arg1.Value == 1 && (int)arg2.Value == 5, 
                 "The `Range` property of the `Task` class should be marked with the `[Range]` attribute with a min value of 1 and a max of value of 5.");
         }
     }
