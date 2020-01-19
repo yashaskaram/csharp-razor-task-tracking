@@ -7,14 +7,13 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
 {
     public class CreateCreateTaskPageTests
     {
-        [Fact(DisplayName = "Create the CreateTask Page")]
+        [Fact(DisplayName = "Create the CreateTask Page @create-createtask-page")]
         public void CreateCreateTaskPageTest()
         {
-            // Get appropriate path to file for the current operating system
             var filePath = TestHelpers.GetRootString() + "Tasker"
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "CreateTask.cshtml";
-            // Assert Index.cshtml is in the Views/Home folder
+
             Assert.True(File.Exists(filePath), "CreateTask.cshtml should exist in the Pages folder.");
 
             var doc = new HtmlDocument();

@@ -10,14 +10,13 @@ namespace Tasker.Tests.BuildingTaskForm
 {
     public class CreatingTheFormInputsTests
     {
-        [Fact(DisplayName = "Create the Form Inputs")]
+        [Fact(DisplayName = "Create the Form Inputs @create-form-inputs")]
         public void CreateTheFormInputTagsTest()
         {
-            // Get appropriate path to file for the current operating system
             var filePath = TestHelpers.GetRootString() + "Tasker"
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "CreateTask.cshtml";
-            // Assert Index.cshtml is in the Views/Home folder
+
             Assert.True(File.Exists(filePath), "CreateTask.cshtml should exist in the Pages folder.");
 
             var doc = new HtmlDocument();

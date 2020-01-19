@@ -8,7 +8,7 @@ namespace Tasker.Tests.BuildingTaskForm
 {
     public class AddingTaskToCreateTaskTests
     {
-        [Fact(DisplayName = "Add the Task property to the CreateTask.cshtml.cs Class")]
+        [Fact(DisplayName = "Add the Task property to the CreateTask.cshtml.cs Class @create-newtask-property")]
         public void AddingTaskPropertyToCreateTaskTests()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

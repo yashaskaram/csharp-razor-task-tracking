@@ -10,11 +10,10 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
         [Fact(DisplayName = "Create the Index Page @create-index-page")]
         public void CreateIndexPageTest()
         {
-            // Get appropriate path to file for the current operating system
             var filePath = TestHelpers.GetRootString() + "Tasker"
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "Index.cshtml";
-            // Assert Index.cshtml is in the Views/Home folder
+
             Assert.True(File.Exists(filePath), "Index.cshtml should exist in the Pages folder.");
 
             var doc = new HtmlDocument();

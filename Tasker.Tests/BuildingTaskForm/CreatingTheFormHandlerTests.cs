@@ -10,7 +10,7 @@ namespace Tasker.Tests.BuildingTaskForm
 {
     public class CreatingTheFormHandlerTests
     {
-        [Fact(DisplayName = "Create the Form Handler Method")]
+        [Fact(DisplayName = "Create the Form Handler Method @create-form-handler")]
         public void CreateFormHandlerMethodTests()
         {
             var filePath = TestHelpers.GetRootString() + "Tasker"

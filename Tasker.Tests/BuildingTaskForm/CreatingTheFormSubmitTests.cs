@@ -10,14 +10,13 @@ namespace Tasker.Tests.BuildingTaskForm
 {
     public class CreatingTheFormSubmitTests
     {
-        [Fact(DisplayName = "Completing the Form")]
+        [Fact(DisplayName = "Completing the Form @create-form-submit")]
         public void CreateTheFormSubmitTagsTest()
         {
-            // Get appropriate path to file for the current operating system
             var filePath = TestHelpers.GetRootString() + "Tasker"
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "CreateTask.cshtml";
-            // Assert Index.cshtml is in the Views/Home folder
+
             Assert.True(File.Exists(filePath), "CreateTask.cshtml should exist in the Pages folder.");
 
             var doc = new HtmlDocument();
