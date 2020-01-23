@@ -17,7 +17,7 @@ namespace Tasker.Tests.BuildingTaskForm
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "CreateTask.cshtml";
 
-            Assert.True(File.Exists(filePath), "CreateTask.cshtml should exist in the Pages folder.");
+            Assert.True(File.Exists(filePath), "`CreateTask.cshtml` should exist in the Pages folder.");
 
             var doc = new HtmlDocument();
             doc.Load(filePath);
@@ -27,17 +27,17 @@ namespace Tasker.Tests.BuildingTaskForm
             foreach(var label in labels)
             {
                 var parsedLabel = doc.DocumentNode.Descendants("label").FirstOrDefault(x => x.InnerText.Contains(label));
-                Assert.True(parsedLabel != null, $"CreateTask.cshtml should contain a label with the text of '{label}'");
+                Assert.True(parsedLabel != null, $"`CreateTask.cshtml` should contain a `label` tag with the text of '{label}'.");
 
                 Assert.True(parsedLabel.Attributes.Contains(@"asp-for"),
-                    $"CreateTask.cshtml should contain a `label` tag with an asp-for=\"NewTask.{label}\" tag helper.");
+                    $"`CreateTask.cshtml` should contain a `label` tag with an `asp-for=\"NewTask.{label}\"` tag helper.");
 
                 Assert.True(parsedLabel.Attributes[@"asp-for"].Value == $"NewTask.{label}",
-                    $"CreateTask.cshtml should contain a `label` tag with an asp-for tag helper with a value of NewTask.{label}.");
+                    $"`CreateTask.cshtml` should contain a `label` tag with an `asp-for` tag helper with a value of `NewTask.{label}`.");
 
                 var parsedInput = doc.DocumentNode.Descendants("input")
                     .FirstOrDefault(x => x.Attributes[@"asp-for"]?.Value == $"NewTask.{label}" && x.Attributes[@"type"]?.Value == "text");
-                Assert.True(parsedInput != null, $"CreateTask.cshtml should contain an input with attributes asp-for=\"NewTask.{label}\" and type=\"text\"");
+                Assert.True(parsedInput != null, $"`CreateTask.cshtml` should contain an `input` tag with attributes `asp-for=\"NewTask.{label}\"` and `type=\"text\"`.");
             }
         }
     }

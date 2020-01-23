@@ -16,7 +16,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
             + Path.DirectorySeparatorChar + "Pages"
             + Path.DirectorySeparatorChar + "Index.cshtml.cs";
 
-            Assert.True(File.Exists(filePath), "Index.cshtml.cs should exist in the Tasker project.");
+            Assert.True(File.Exists(filePath), "`Index.cshtml.cs` should exist in the Tasker project.");
 
             var indexModel = TestHelpers.GetClassType("Tasker.Pages.IndexModel");
 
@@ -28,7 +28,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
                 && tasksProperty.Name== "Tasks"
                 && tasksProperty.PropertyType.IsPublic
                 && tasksProperty.PropertyType.Name == "IEnumerable`1",
-                "`IndexModel` class should contain a property called `Tasks` of type IEnumerable<Task>.");
+                "`IndexModel` class should contain a property called `Tasks` of type `IEnumerable<Task>`.");
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
             + Path.DirectorySeparatorChar + "Pages"
             + Path.DirectorySeparatorChar + "Index.cshtml";
 
-            Assert.True(File.Exists(filePath), "Index.cshtml should exist in the Tasker project.");
+            Assert.True(File.Exists(filePath), "`Index.cshtml` should exist in the Tasker project.");
 
             string file;
             using (var streamReader = new StreamReader(filePath))

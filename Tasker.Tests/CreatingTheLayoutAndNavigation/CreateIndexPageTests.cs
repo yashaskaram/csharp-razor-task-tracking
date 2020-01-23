@@ -14,7 +14,7 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "Index.cshtml";
 
-            Assert.True(File.Exists(filePath), "Index.cshtml should exist in the Pages folder.");
+            Assert.True(File.Exists(filePath), "`Index.cshtml` should exist in the Pages folder.");
 
             var doc = new HtmlDocument();
             doc.Load(filePath);
@@ -22,7 +22,7 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
             var h1Tag = doc.DocumentNode.Element("h1");
 
             Assert.True(h1Tag != null && h1Tag.InnerText.Contains("All Tasks"), 
-                "_Layout.cshtml shoud contain an <h1> tag with the text 'All Tasks'.");
+                "`Index.cshtml` shoud contain an `h1` tag with the text `\"All Tasks\"`.");
         }
     }
 }

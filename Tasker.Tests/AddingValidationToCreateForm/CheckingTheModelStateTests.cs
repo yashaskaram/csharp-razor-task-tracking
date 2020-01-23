@@ -16,7 +16,7 @@ namespace Tasker.Tests.AddingValidationToCreateForm
             + Path.DirectorySeparatorChar + "Pages"
             + Path.DirectorySeparatorChar + "CreateTask.cshtml.cs";
 
-            Assert.True(File.Exists(filePath), "CreateTask.cshtml.cs should exist in the Tasker project.");
+            Assert.True(File.Exists(filePath), "`CreateTask.cshtml.cs` should exist in the Tasker project.");
 
             string file;
             using (var streamReader = new StreamReader(filePath))
@@ -26,7 +26,8 @@ namespace Tasker.Tests.AddingValidationToCreateForm
 
             var pattern = @"\s*?if\s*?\(\s*?!ModelState.IsValid\s*?\)\s*?{\s*?return\s*?Page\(\);\s*?}";
             var rgx = new Regex(pattern);
-            Assert.True(rgx.IsMatch(file), "`CreateTask.cshtmlcs` does not appear to contain a conditional to check if the ModelState is valid.");
+            Assert.True(rgx.IsMatch(file), 
+                "`CreateTask.cshtml.cs` does not appear to contain a conditional to check if the `ModelState` is valid.");
         }
     }
 }

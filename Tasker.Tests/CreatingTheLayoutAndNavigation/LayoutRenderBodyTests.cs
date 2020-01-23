@@ -24,7 +24,7 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
             var mainTag = doc.DocumentNode.Descendants("main").FirstOrDefault();
 
             Assert.True(mainTag.InnerText.Contains("@RenderBody()"),
-                "The <main> tag inside _Layout.cshtml should contain the @RenderBody() directive to render the current page.");
+                "The `main` tag inside `_Layout.cshtml` should contain the `@RenderBody()` directive to render the current page.");
         }
     }
 }

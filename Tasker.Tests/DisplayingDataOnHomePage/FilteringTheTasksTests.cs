@@ -15,7 +15,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
             + Path.DirectorySeparatorChar + "Pages"
             + Path.DirectorySeparatorChar + "Index.cshtml.cs";
 
-            Assert.True(File.Exists(filePath), "Index.cshtml.cs should exist in the Tasker project.");
+            Assert.True(File.Exists(filePath), "`Index.cshtml.cs` should exist in the Tasker project.");
 
             string file;
             using (var streamReader = new StreamReader(filePath))
@@ -24,7 +24,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
             }
 
             Assert.True(file.Contains("Tasks = _context.Tasks.OrderBy(x => x.Priority)"),
-                "`Index.cshtml.cs` did not contain a call to `Tasks` on the `ApplicationDbContext` type.");
+                "`Index.cshtml.cs` did not contain a call to `.OrderBy(x => x.Priority)` on the `_context.Tasks`");
         }
     }
 }

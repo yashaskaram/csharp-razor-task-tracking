@@ -27,7 +27,7 @@ namespace Tasker.Tests.AddingValidationToCreateForm
             var validationSummary = divTags.FirstOrDefault(x => x.Attributes["asp-validation-summary"]?.Value == "All");
 
             Assert.True(validationSummary != null,
-                "CreateTask.cshtml should contain a div with the `asp-validation-summary` tag helper with a value of `All`.");
+                "`CreateTask.cshtml` should contain a `div` with the `asp-validation-summary` tag helper with a value of `All`.");
         }
     }
 }

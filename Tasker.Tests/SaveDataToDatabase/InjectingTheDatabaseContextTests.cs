@@ -18,7 +18,7 @@ namespace Tasker.Tests.SaveDataToDatabase
             + Path.DirectorySeparatorChar + "Pages"
             + Path.DirectorySeparatorChar + "CreateTask.cshtml.cs";
 
-            Assert.True(File.Exists(filePath), "CreateTask.cshtml.cs should exist in the Tasker project.");
+            Assert.True(File.Exists(filePath), "`CreateTask.cshtml.cs` should exist in the Tasker project.");
 
             var taskModel = TestHelpers.GetClassType("Tasker.Pages.CreateTaskModel");
 
@@ -29,14 +29,14 @@ namespace Tasker.Tests.SaveDataToDatabase
             Assert.True(constructorMethod != null
                 && constructorMethod.IsPublic
                 && constructorMethod.GetParameters().FirstOrDefault(x => x.ParameterType.Name == "ApplicationDbContext") != null,
-                "`CreateTaskModel` class should contain a public constructor that accepts a type of ApplicationDbContext.");
+                "`CreateTaskModel` class should contain a `public` constructor that accepts a type of `ApplicationDbContext`.");
 
             var field = taskModel.GetField("_context", BindingFlags.NonPublic | BindingFlags.Instance);
 
             Assert.True(field != null 
                 && field.FieldType.Name == "ApplicationDbContext"
                 && field.IsPrivate,
-                "`CreateTaskModel` class should contain a field called `_context` of type ApplicationDbContext.");
+                "`CreateTaskModel` class should contain a field called `_context` of type `ApplicationDbContext`.");
         }
     }
 }

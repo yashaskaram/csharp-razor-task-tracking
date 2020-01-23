@@ -30,7 +30,7 @@ namespace Tasker.Tests.AddingValidationToCreateForm
             Assert.True(descriptionMinLength != null, "The `Description` property of the `Task` class should be marked with the `[MinLength]` attribute.");
 
             var arg = descriptionMinLength.ConstructorArguments.FirstOrDefault();
-            Assert.True(descriptionMinLength != null && (int)arg.Value == 10, "The `Description` property of the `Task` class should be marked with the `[MinLength]` attribute.");
+            Assert.True(descriptionMinLength != null && (int)arg.Value == 10, "`MinLength` attribute should be passed a value of 10.");
         }
     }
 }

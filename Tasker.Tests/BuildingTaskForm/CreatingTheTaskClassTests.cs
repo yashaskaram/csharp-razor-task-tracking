@@ -15,7 +15,7 @@ namespace Tasker.Tests.BuildingTaskForm
             var filePath = TestHelpers.GetRootString() + "Tasker"
                 + Path.DirectorySeparatorChar + "Task.cs";
 
-            Assert.True(File.Exists(filePath), "Task.cs should exist in the Tasker project.");
+            Assert.True(File.Exists(filePath), "`Task.cs` should exist in the Tasker project.");
 
             var taskModel = TestHelpers.GetClassType("Tasker.Task");
 

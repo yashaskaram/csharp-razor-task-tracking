@@ -15,13 +15,13 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "CreateTask.cshtml";
 
-            Assert.True(File.Exists(filePath), "CreateTask.cshtml should exist in the Pages folder.");
+            Assert.True(File.Exists(filePath), "`CreateTask.cshtml` should exist in the Pages folder.");
 
             var doc = new HtmlDocument();
             doc.Load(filePath);
 
             Assert.True(doc.DocumentNode.InnerText.Contains("@page \"/create-task\""),
-                "CreatePage.cshtml should contain the text @page \"/create-task\" at the top of the file to enable a user friendly route.");
+                "`CreatePage.cshtml` should contain the text `@page \"/create-task\"` at the top of the file to enable a user friendly route.");
         }
     }
 }

@@ -26,7 +26,7 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
             var createLink = aTags.FirstOrDefault(x => x.Attributes["asp-page"]?.Value == "CreateTask");
 
             Assert.True(indexLink != null && createLink != null, 
-                "_Layout.cshtml should contain navigation <a> tags with tag helpers pointing to the Index and CreateTask pages.");
+                "`_Layout.cshtml` should contain navigation `a` tags with tag helpers pointing to the `Index` and `CreateTask` pages.");
         }
     }
 }

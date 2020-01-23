@@ -28,7 +28,7 @@ namespace Tasker.Tests.DisplayingDataOnHomePage
             Assert.True(constructorMethod != null
                 && constructorMethod.IsPublic
                 && constructorMethod.GetParameters().FirstOrDefault(x => x.ParameterType.Name == "ApplicationDbContext") != null,
-                "`IndexModel` class should contain a public constructor that accepts a type of ApplicationDbContext.");
+                "`IndexModel` class should contain a `public` constructor that accepts a type of ApplicationDbContext.");
 
             var field = taskModel.GetField("_context", BindingFlags.NonPublic | BindingFlags.Instance);
 

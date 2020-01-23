@@ -17,14 +17,14 @@ namespace Tasker.Tests.BuildingTaskForm
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "CreateTask.cshtml";
 
-            Assert.True(File.Exists(filePath), "CreateTask.cshtml should exist in the Pages folder.");
+            Assert.True(File.Exists(filePath), "`CreateTask.cshtml` should exist in the Pages folder.");
 
             var doc = new HtmlDocument();
             doc.Load(filePath);
 
             var parsedInput = doc.DocumentNode.Descendants("input")
                 .FirstOrDefault(x => x.Attributes[@"type"]?.Value == "submit");
-            Assert.True(parsedInput != null, $"CreateTask.cshtml should contain an input with the attribute type=\"Text\".");
+            Assert.True(parsedInput != null, $"`CreateTask.cshtml` should contain an `input` tag with the attribute `type=\"submit\"`.");
         }
     }
 }

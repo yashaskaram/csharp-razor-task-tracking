@@ -14,7 +14,7 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
                 + Path.DirectorySeparatorChar + "Pages"
                 + Path.DirectorySeparatorChar + "CreateTask.cshtml";
 
-            Assert.True(File.Exists(filePath), "CreateTask.cshtml should exist in the Pages folder.");
+            Assert.True(File.Exists(filePath), "`CreateTask.cshtml` should exist in the Pages folder.");
 
             var doc = new HtmlDocument();
             doc.Load(filePath);
@@ -22,7 +22,7 @@ namespace Tasker.Tests.CreatingTheLayoutAndNavigation
             var h1Tag = doc.DocumentNode.Element("h1");
 
             Assert.True(h1Tag != null && h1Tag.InnerText.Contains("New Task"), 
-                "CreateTask.cshtml should contain an <h1> tag with the text 'New Task'");
+                "`CreateTask.cshtml` should contain an `h1` tag with the text \"New Task\".");
         }
     }
 }
